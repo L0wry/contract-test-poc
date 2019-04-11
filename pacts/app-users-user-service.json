@@ -1,0 +1,63 @@
+{
+  "consumer": {
+    "name": "app-users"
+  },
+  "provider": {
+    "name": "user-service"
+  },
+  "interactions": [
+    {
+      "description": "a request to list all users",
+      "providerState": "i have a list of users",
+      "request": {
+        "method": "GET",
+        "path": "/users"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+        },
+        "body": [
+          {
+            "name": "name",
+            "password": "password",
+            "age": 10
+          },
+          {
+            "name": "name",
+            "password": "password",
+            "age": 10
+          },
+          {
+            "name": "name",
+            "password": "password",
+            "age": 10
+          },
+          {
+            "name": "name",
+            "password": "password",
+            "age": 10
+          },
+          {
+            "name": "name",
+            "password": "password",
+            "age": 10
+          }
+        ],
+        "matchingRules": {
+          "$.body": {
+            "min": 5
+          },
+          "$.body[*].*": {
+            "match": "type"
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+I, [2019-04-11T14:12:37.507995 #84963]  INFO -- : Registered expected interaction GET /users
+D, [2019-04-11T14:12:37.508250 #84963] DEBUG -- : {
+  "description": "a request to list all users",
+  "providerState": "i have a list of users",
+  "request": {
+    "method": "GET",
+    "path": "/users"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+    },
+    "body": {
+      "json_class": "Pact::ArrayLike",
+      "contents": {
+        "name": "name",
+        "password": "password",
+        "age": 10
+      },
+      "min": 5
+    }
+  }
+}
+I, [2019-04-11T14:12:37.516759 #84963]  INFO -- : Received request GET /users
+D, [2019-04-11T14:12:37.516868 #84963] DEBUG -- : {
+  "path": "/users",
+  "query": "",
+  "method": "get",
+  "headers": {
+    "Accept": "application/json, text/plain, */*",
+    "User-Agent": "axios/0.18.0",
+    "Host": "localhost:4000",
+    "Connection": "close",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2019-04-11T14:12:37.517030 #84963]  INFO -- : Found matching response for GET /users
+D, [2019-04-11T14:12:37.517111 #84963] DEBUG -- : {
+  "status": 200,
+  "headers": {
+  },
+  "body": {
+    "json_class": "Pact::ArrayLike",
+    "contents": {
+      "name": "name",
+      "password": "password",
+      "age": 10
+    },
+    "min": 5
+  }
+}
+I, [2019-04-11T14:12:37.524753 #84963]  INFO -- : Verifying - interactions matched
+I, [2019-04-11T14:12:37.528320 #84963]  INFO -- : Cleared interactions
+I, [2019-04-11T14:12:37.532599 #84963]  INFO -- : Writing pact for user-service to /Users/matthewlowry/dev/BP/contract-test/pacts/app-users-user-service.json
